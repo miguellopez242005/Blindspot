@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BlindspotService } from './services/blindspot';
-import { Character } from './interfaces/Character.interface';
+import { Character } from './interfaces/character.interface';
 import { Subscription } from 'rxjs';
 
 @Component({
