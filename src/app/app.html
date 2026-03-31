@@ -1,0 +1,45 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<section *ngIf="pp == ''">
+  <header>
+  <h1>BLINDSPOT</h1>
+  <article class="comment-card" (click)="ruta('z')">
+    <h2 class="comment-body">
+      Start
+    </h2>
+  </article>
+</header>
+</section>
+
+<section *ngIf="pp == 'z'" [ngSwitch]="ComponenteMostrar">
+  <nav [class.open]="menuOpen">
+    <ul class="zas">
+      <li class="nor"><a alt="/Iniciar"  (click)="ruta('')"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+    </ul>
+
+  <button class="menu-toggle" (click)="menuOpen = !menuOpen">
+    ☰
+  </button>
+  <ul [style.top]="menuOpen ? 100 + '%' : 'auto'">
+    <li><a alt="/home" (click)="Mostrar('H')">Home</a></li>
+    <li><a alt="/episodes" (click)="Mostrar('p')">Episodes</a></li>
+    <li><a alt="/cast" (click)="Mostrar('c')">Cast</a></li>
+  </ul>
+</nav>
+<body (click)="menuOpen = false">
+  <app-character
+  [character]="Character"
+  *ngSwitchCase="'H'"
+  ></app-character>
+  <app-character-list
+  *ngSwitchCase="'p'"
+  [episodes]="filteredEpisodes" 
+  [seasons]="seasons"
+  (onFilter)="aplicarFiltro($event)">
+
+  ></app-character-list>
+  <app-cast *ngSwitchCase="'c'"
+  [cast]="cast"></app-cast>
+</body>
+</section>

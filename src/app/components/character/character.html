@@ -1,0 +1,26 @@
+<article class="comment-card">
+  <div class="video-wrapper">
+    <iframe 
+      width="100%" 
+      height="100%" 
+      src="https://www.youtube.com/embed/RqZkit-aCTo" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</article>
+
+<section class="info-container">
+  <div class="meta-data">
+    <span class="rating">⭐ {{character.rating.average || 'N/A'}}</span>
+    <span class="duration">⏱️ {{character.runtime}} min</span>
+  </div>
+  
+  <div class="summary-box">
+    <h3>Sinopsis</h3>
+    <div class="description" [innerHTML]="character.summary"></div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+<section class="cast-container">
+  <div *ngFor="let actor of cast" class="cast-item">
+    <h4>{{ actor.person.name }}</h4>
+    <img *ngIf="actor.person.image" 
+    [src]="actor.person.image.medium" 
+    [alt]="actor.person.name">
+    <p>Personaje: {{ actor.character.name }}</p>
+  </div>
+</section>

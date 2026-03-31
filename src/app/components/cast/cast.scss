@@ -1,0 +1,54 @@
+.cast-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 tarjetas por fila
+  gap: 1.5rem;
+  padding: 2rem;
+
+  .cast-item {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      color: #222;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      margin: 0;
+      font-style: italic;
+    }
+  }
+}
+
+// Responsivo: en pantallas pequeñas se ajusta
+@media (max-width: 992px) {
+  .cast-container {
+    grid-template-columns: repeat(2, 1fr); // 2 tarjetas por fila
+  }
+}
+
+@media (max-width: 576px) {
+  .cast-container {
+    grid-template-columns: 1fr; // 1 tarjeta por fila
+  }
+}

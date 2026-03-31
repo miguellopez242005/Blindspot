@@ -1,0 +1,141 @@
+.comments-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.episode-item {
+  background: linear-gradient(135deg, #333, #555);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  width: calc(45% - 1rem);
+  min-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: #ff5252;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+  }
+  a{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff5252;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #9c2020;
+    }
+  }
+ img {
+  width: 100%;
+  max-width: 100%;
+  border: 2px solid #333;
+  filter: grayscale(20%);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border-radius: 4px;
+ }
+ img:hover {
+  filter: grayscale(0%);
+  border-color: #e50914;
+ }
+}
+.duration{
+  width: 20%;
+  text-align: center;
+  background-color: #252a25;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.filter-wrapper {
+  margin: 30px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  label {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  }
+
+  select {
+    width: 250px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    
+    appearance: none; 
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+
+    &:hover {
+      border-color: #ff0000; // El rojo de Blindspot
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    &:focus {
+      border-color: #ff0000;
+      background-color: #222;
+    }
+
+    option {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 10px;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .filter-wrapper {
+    margin: 20px 10px;
+    
+    select {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  .comments-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .episode-item {
+    width: 100%;
+    max-width: 600px;
+  }
+}

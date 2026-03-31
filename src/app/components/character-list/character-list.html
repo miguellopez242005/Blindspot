@@ -1,0 +1,19 @@
+<div class="filter-wrapper">
+  <label>Temporada</label>
+  <select (change)="filtrar($event)">
+    <option value="all">Todas las temporadas</option>
+    <option *ngFor="let s of seasons" [value]="s">Temporada {{ s }}</option>
+  </select>
+</div>
+<section class="comments-container">
+  <div *ngFor="let episode of episodes" class="episode-item">
+    <h3>{{ episode.name }}</h3>
+        <img [src]="episode.image.original" [alt]="episode.name">
+    <p>Temporada: {{ episode.season }},Episodio: {{ episode.number }}</p>
+    <p [innerHTML]="episode.summary"></p>
+    <p class="duration">Duration: {{episode.runtime}}</p>
+    <a *ngIf="episode.url" (click)="openEpisode(episode.url)">
+      Ver episodio
+    </a>
+  </div>
+</section>
